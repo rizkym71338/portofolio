@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useScrollspy } from "../../helpers";
+import { Fade } from "react-reveal";
 
 const Navbar = ({ homeRef, aboutRef, skillRef, projectRef, contactRef }) => {
   const navItem = [
@@ -46,32 +47,33 @@ const Navbar = ({ homeRef, aboutRef, skillRef, projectRef, contactRef }) => {
 
   return (
     <>
-      <nav className="bg-white z-30 fixed w-full top-0 shadow-md">
-        <div className="max-w-6xl flex flex-wrap justify-between px-2 sm:px-4 py-2.5 items-center mx-auto">
-          <Link
-            to={`/`}
-            // onClick={() => handleScroll(homeRef.current)}
-            className={`font-bold text-slate-700 text-xl text-center md:text-left w-full md:w-fit`}
-          >
-            Rizky Maulana
-          </Link>
-          <div className="hidden w-full md:block md:w-fit">
-            <ul className="flex py-4 flex-row gap-8 text-sm font-medium">
-              {navItem.map((nav, i) => (
-                <li key={i} onClick={() => handleScroll(nav.ref.current)}>
-                  <a
-                    className={`${
-                      activeId == nav.id ? "text-blue-700" : "text-slate-700"
-                    } block md:hover:text-blue-700 cursor-pointer transition-all duration-300 ease-in-out`}
-                  >
-                    {nav.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+      <Fade cascade>
+        <nav className="bg-white z-30 fixed w-full top-0 shadow-md">
+          <div className="max-w-6xl flex flex-wrap justify-between px-2 sm:px-4 py-2.5 items-center mx-auto">
+            <Link
+              to={`/`}
+              className={`font-bold text-slate-700 text-xl text-center md:text-left w-full md:w-fit`}
+            >
+              Rizky Maulana
+            </Link>
+            <div className="hidden w-full md:block md:w-fit">
+              <ul className="flex py-4 flex-row gap-8 text-sm font-medium">
+                {navItem.map((nav, i) => (
+                  <li key={i} onClick={() => handleScroll(nav.ref.current)}>
+                    <a
+                      className={`${
+                        activeId == nav.id ? "text-blue-700" : "text-slate-700"
+                      } block md:hover:text-blue-700 cursor-pointer transition-all duration-300 ease-in-out`}
+                    >
+                      {nav.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </Fade>
     </>
   );
 };

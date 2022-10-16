@@ -1,4 +1,5 @@
 import React, { forwardRef } from "react";
+import { Fade } from "react-reveal";
 
 const SKill = forwardRef(({ id }, ref) => {
   const data = [
@@ -30,32 +31,40 @@ const SKill = forwardRef(({ id }, ref) => {
         >
           <div className={`flex flex-col space-y-12 md:space-y-16`}>
             <div className="flex flex-col w-fix mx-auto">
-              <span className={`text-3xl md:text-5xl font-bold text-slate-700`}>
-                Skills
-              </span>
-              <div className={`h-1 w-1/2 bg-blue-700`} />
+              <Fade bottom cascade>
+                <span
+                  className={`text-3xl md:text-5xl font-bold text-slate-700`}
+                >
+                  Skills
+                </span>
+                <div className={`h-1 w-1/2 bg-blue-700`} />
+              </Fade>
             </div>
             <div className={`grid grid-cols-1 md:grid-cols-3 gap-10`}>
-              {data.map((skill, i) => (
-                <div
-                  key={i}
-                  className={`space-y-2 md:space-y-4 flex flex-col justify-center`}
-                >
+              <Fade bottom cascade>
+                {data.map((skill, i) => (
                   <div
-                    className={`w-full aspect-[4/3] bg-blue-200 rounded-lg`}
-                  ></div>
-                  <span
-                    className={`text-lg md:text-2xl font-bold text-slate-700`}
+                    key={i}
+                    className={`space-y-2 md:space-y-4 flex flex-col justify-center`}
                   >
-                    {skill.title}
-                  </span>
-                  <p
-                    className={`text-sm md:text-base font-medium text-slate-700 text-justify`}
-                  >
-                    {skill.description}
-                  </p>
-                </div>
-              ))}
+                    <Fade bottom cascade>
+                      <div
+                        className={`w-full aspect-[4/3] bg-blue-200 rounded-lg`}
+                      ></div>
+                      <span
+                        className={`text-lg md:text-2xl font-bold text-slate-700`}
+                      >
+                        {skill.title}
+                      </span>
+                      <p
+                        className={`text-sm md:text-base font-medium text-slate-700 text-justify`}
+                      >
+                        {skill.description}
+                      </p>
+                    </Fade>
+                  </div>
+                ))}
+              </Fade>
             </div>
           </div>
         </div>
