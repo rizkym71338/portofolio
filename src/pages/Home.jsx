@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Hero, Navbar } from "../components";
+import { About, Hero, Navbar } from "../components";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -18,13 +18,7 @@ const Home = () => {
         skillRef={skillRef}
       />
       <Hero ref={homeRef} id={`home`} />
-      <section
-        ref={aboutRef}
-        id={`about`}
-        className="h-screen flex items-center justify-center flex-col bg-slate-50"
-      >
-        <h1 className="text-3xl font-bold text-slate-900">About</h1>
-      </section>
+      <About ref={aboutRef} id={`about`} />
       <section
         ref={skillRef}
         id={`skill`}
