@@ -1,6 +1,7 @@
-import React from "react";
+import React, { forwardRef } from "react";
+import { IlustrationAbout } from "../../assets/images";
 
-const About = ({ ref, id }) => {
+const About = forwardRef(({ id }, ref) => {
   return (
     <>
       <section ref={ref} id={id} className={`bg-blue-700/25`}>
@@ -10,16 +11,24 @@ const About = ({ ref, id }) => {
           <div
             className={`grid w-full grid-cols-1 md:grid-cols-2 gap-6 place-items-center`}
           >
-            <div>LEFT</div>
+            <div className={`flex items-center justify-center`}>
+              <img
+                src={IlustrationAbout}
+                alt={`IlustrationAbout`}
+                className={`h-72 md:h-96`}
+              />
+            </div>
             <div className={`flex flex-col space-y-4`}>
-              <div className={`w-fit`}>
-                <span className={`text-5xl text-slate-900 font-bold`}>
+              <div className={`w-fit mx-auto md:mx-0`}>
+                <span
+                  className={`text-3xl md:text-5xl text-slate-900 font-bold`}
+                >
                   About
                 </span>
                 <div className={`h-1 bg-blue-700 w-1/2`} />
               </div>
               <p
-                className={`text-base text-slate-900 font-semibold text-justify`}
+                className={`text-xs md:text-base text-slate-900 font-semibold text-justify`}
               >
                 Making it look like readable English. Many desktop publishing
                 packages and web page editors now use Lorem Ipsum as their
@@ -34,6 +43,6 @@ const About = ({ ref, id }) => {
       </section>
     </>
   );
-};
+});
 
 export default About;

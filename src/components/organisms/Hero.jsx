@@ -1,10 +1,10 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Blob, Profile } from "../../assets";
 import { ButtonOutline } from "../atoms";
 import ButtonFIll from "../atoms/ButtonFIll";
 import { TypeAnimation } from "react-type-animation";
 
-const Hero = ({ ref, id }) => {
+const Hero = forwardRef(({ id }, ref) => {
   return (
     <>
       <section ref={ref} id={id} className="bg-white">
@@ -65,6 +65,6 @@ const Hero = ({ ref, id }) => {
       </section>
     </>
   );
-};
+});
 
 export default Hero;

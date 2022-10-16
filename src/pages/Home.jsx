@@ -1,5 +1,13 @@
 import React, { useRef } from "react";
-import { About, Hero, Navbar } from "../components";
+import {
+  About,
+  Contact,
+  Footer,
+  Hero,
+  Navbar,
+  Project,
+  Skill,
+} from "../components";
 
 const Home = () => {
   const homeRef = useRef(null);
@@ -19,27 +27,10 @@ const Home = () => {
       />
       <Hero ref={homeRef} id={`home`} />
       <About ref={aboutRef} id={`about`} />
-      <section
-        ref={skillRef}
-        id={`skill`}
-        className="h-screen flex items-center justify-center flex-col bg-slate-50"
-      >
-        <h1 className="text-3xl font-bold text-slate-900">Skills</h1>
-      </section>
-      <section
-        ref={projectRef}
-        id={`project`}
-        className="h-screen flex items-center justify-center flex-col bg-slate-50"
-      >
-        <h1 className="text-3xl font-bold text-slate-900">Projects</h1>
-      </section>
-      <section
-        ref={contactRef}
-        id={`contact`}
-        className="h-screen flex items-center justify-center flex-col bg-slate-50"
-      >
-        <h1 className="text-3xl font-bold text-slate-900">Contact</h1>
-      </section>
+      <Skill ref={skillRef} id={`skill`} />
+      <Project ref={projectRef} id={`project`} />
+      <Contact ref={contactRef} id={`contact`} />
+      <Footer />
     </>
   );
 };
